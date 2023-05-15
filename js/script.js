@@ -13,8 +13,8 @@ function myButtonClicked() {
   const divisor = parseInt(document.getElementById("divisor").value)
 
 
-  while (counter <= multiplier) {
-    text = text + multiplicand + " x " + counter + " = " + counter * multiplicand + "<br>"
+  while (counter <= dividend) {
+    text = text + divisor + " x " + counter + " = " + counter * dividend + "<br>"
     counter = counter + 1
   }
   document.getElementById("answer").innerHTML = text
