@@ -7,15 +7,27 @@
 "use strict"
 
 function myButtonClicked() {
-  let text = ""
-  let counter = 0
   const dividend = parseInt(document.getElementById("dividend").value)
   const divisor = parseInt(document.getElementById("divisor").value)
+  let remainder = dividend
+  let output = 0
 
-
-  while (counter <= dividend) {
-    text = text + divisor + " x " + counter + " = " + counter * dividend + "<br>"
-    counter = counter + 1
+  while (remainder >= divisor) {
+    remainder -= divisor
+    output++
   }
-  document.getElementById("answer").innerHTML = text
+  if (remainder > 0) {
+    document.getElementById("answer").innerHTML =
+      dividend +
+      " ÷ " +
+      divisor +
+      " = " +
+      output +
+      " with a remainder of " +
+      remainder +
+      "."
+  } else {
+    document.getElementById("answer").innerHTML =
+      dividend + " ÷ " + divisor + " = " + output + "."
+  }
 }
